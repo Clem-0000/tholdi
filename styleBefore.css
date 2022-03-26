@@ -1,0 +1,390 @@
+/* style index*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.banniere {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.banniere .box_content {
+    height: 100vh;
+    position: relative;
+}
+
+.banniere .box_img {
+    height: 100vh;
+    position: relative;
+    background: cadetblue;
+}
+
+header {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    font-size: 1.4em;
+    color: #014F86;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #424546;
+    letter-spacing: 1px;
+}
+
+header ul li a:hover {
+    color: #1d1e1f;
+}
+
+.box_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.box_content h2 {
+    font-size: 4em;
+    color: #313536;
+}
+
+.box_content p {
+    font-size: 1.1em;
+    color: #687479;
+    line-height: 1.8em;
+}
+
+.btn-propos {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #313536;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid #313536;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.btn-propos:hover {
+    background: #313536;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.box_img {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box_img .imgBox {
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
+.box_img .imgBox:nth-child(2) {
+    width: 100%;
+}
+
+.box_img .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* rendre l'index responsive*/
+
+@media (max-width: 991px) {
+    .banniere {
+        grid-template-columns: 1fr;
+    }
+    header {
+        padding: 20px 40px;
+    }
+    .box_content {
+        padding: 40px;
+    }
+    .banniere .box_content {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .box_content h2 {
+        font-size: 3em;
+    }
+    .box_img .imgBox {
+        height: 40vh;
+    }
+}
+
+
+/* style img background propos*/
+
+.hero {
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+}
+
+.hero .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-color: white;
+    z-index: -1;
+}
+
+
+/* a propos*/
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 100px;
+}
+
+section h3.title {
+    color: #414a4f;
+    text-transform: capitalize;
+    font: bold 32px 'Open Sans', sans-serif;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+section p {
+    font-size: 18px;
+    max-width: 1000px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0px 10px;
+    line-height: 2;
+}
+
+hr {
+    margin: auto;
+    width: 150px;
+    height: 2px;
+    background-color: #014F86;
+    border: 0;
+    margin-bottom: 40px;
+}
+
+.container {
+    position: relative;
+    width: 1200px;
+    display: flex;
+    padding: 30px;
+}
+
+.container .card {
+    position: relative;
+    max-width: 380px;
+    height: 215px;
+    margin: 30px 30px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover {
+    height: 260px;
+}
+
+.container .card .imgCard {
+    position: relative;
+    width: 340px;
+    height: 260px;
+    top: -60px;
+    z-index: 1;
+}
+
+.container .card .imgCard img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.container .card h3 {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover h3 {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.2s;
+}
+
+
+/* début style pour reservations*/
+
+.displayResa {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: red;
+}
+
+.resaBox {
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 10px;
+    background: green;
+}
+
+.resaBox p {
+    padding: 4px;
+    color: #313536;
+    letter-spacing: 2px;
+}
+
+
+/* style pour créer un compte*/
+
+.containForm {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #61A5C2, #2A6F97, #014F86);
+}
+
+.containerForm {
+    max-width: 900px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.containerForm .titleForm {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.containerForm .titleForm::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 6%;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #61A5C2, #2A6F97, #014F86);
+}
+
+.contentForm form .detailForm {
+    column-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .detailForm .inputForm {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .inputForm span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.detailForm .inputForm input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.detailForm .inputForm input:focus {
+    border-color: #014F86;
+}
+
+.contentForm form .detailForm {
+    column-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px;
+    width: 100%;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #014F86;
+}
+
+form .button input:hover {
+    /* transform: scale(0.99); */
+    background: #2A6F97;
+    letter-spacing: 2px;
+}
