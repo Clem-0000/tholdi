@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("session.php");
 include_once 'gestion.base.inc.php';
 ?>
@@ -13,7 +14,6 @@ include_once 'gestion.base.inc.php';
 
 
     <body>
-
         <section class="containForm">
             <div class="containerForm">
                 <div class="titleForm">Créer une Réservation</div>
@@ -23,20 +23,20 @@ include_once 'gestion.base.inc.php';
 
                             <div class="inputForm">
                                 <span class="details">Date du Début de Réservation</span>
-                                <input type="date" name="dateDebutReservation">
+                                <input type="date" name="dateDebutReservation" id="dateDebutReservation">
                             </div>
                             <div class="inputForm">
                                 <span class="details">Date de Fin de Réservation</span>
-                                <input type="date" name="datefinReservation ">
+                                <input type="date" name="datefinReservation" id="datefinReservation" required>
                             </div>
                             <div class="inputForm">
                                 <span class="details">Volume Estimée</span>
-                                <input type="text " name="volumeEstime ">
+                                <input type="text " name="volumeEstime" id="volumeEstime">
                                 <p>
                                     <?php
             $collectionVilles = obtenirVille();
             ?>
-                                        <select name="codeVilleMiseDisposition ">
+                                        <select name="codeVilleMiseDisposition"  id="codeVilleMiseDisposition">
                 <?php
                 foreach ($collectionVilles as $ville) :
                     ?>
@@ -46,7 +46,7 @@ include_once 'gestion.base.inc.php';
                                 <?php endforeach; ?>
                                 </select>
 
-                                        <select name="codeVilleRendre">
+                                        <select name="codeVilleRendre" id="codeVilleRendre">
                 <?php
                 foreach ($collectionVilles as $ville) :
                     ?>
@@ -55,10 +55,8 @@ include_once 'gestion.base.inc.php';
                     </option>
                 <?php endforeach; ?>
             </select>
-                                </p>
-                                </br>
+                                
                                 <div class="button">
-
                                     <input type="submit" value="valider">
                                 </div>
                             </div>
@@ -68,13 +66,6 @@ include_once 'gestion.base.inc.php';
                 </div>
 
         </section>
-
-
     </body>
-
-
-
     </html>
-    <?php
-include("fin.inc.php");
-?>
+    
