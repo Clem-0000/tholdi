@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+nav {
+    background-color: #58829b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.logo {
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #f9f9f9;
+    text-transform: uppercase;
+}
+
+.nav-Links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-Links li {
+    list-style: none;
+}
+
+.nav-Links a {
+    color: #f9f9f9;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-Links {
+        width: 60%;
+    }
+}
+
+/** menu burger**/
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #f9f9f9;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-Links {
+        position: absolute;
+        right: 0px;
+        height: 93vh;
+        top: 7vh;
+        background-color: #58829b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-Links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+    /** permet l'ouverture de la navbar**/
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/*** Réservation form ****/
+
+.titlePage{
+    font-size: 28px;
+    padding: 15px;
+}
+
+
+.containerReservation {
+    margin: 50px 20px 50px 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.resaBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #58829b;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 15px;
+    width: 400px;
+}
+
+.resaBox p {
+    color: #f9f9f9;
+}
+
+.buttonAction {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonAction form {
+    padding: 15px;
+}
+
+form button {
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    color: #58829b;
+    border-radius: 5px;
+    border: 1px solid #f9f9f9;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #f9f9f9;
+    opacity: 0.9;
+}
+
+form button:hover {
+    opacity: 1;
+}
