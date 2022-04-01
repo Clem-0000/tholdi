@@ -57,9 +57,6 @@ include_once 'gestion.base.inc.php';
                 </div>
     </div>
 </section>
-<?php 
-
-var_dump($_SESSION) ;
 
 
 

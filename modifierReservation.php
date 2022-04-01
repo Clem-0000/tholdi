@@ -1,6 +1,5 @@
 <?php
 include("debut.inc.php");
-include_once 'gestion.base.inc.php';
 ?>
 <html lang="fr">
     <head>
@@ -21,7 +20,6 @@ include_once 'gestion.base.inc.php';
    
 
     <section class="create-container">
-        <?php afficherValeurAModifier($codeReservation)?>
         <div>
             <header><h2>modifer réservation<h2></header>
                 <form method="post" action="" >

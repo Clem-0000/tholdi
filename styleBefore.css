@@ -213,6 +213,8 @@ hr {
     position: relative;
     width: 1200px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 30px;
 }
 
@@ -262,18 +264,18 @@ hr {
 
 /* début style pour reservations*/
 
-.displayResa {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: red;
+.containerResa {
+    padding: 80px;
 }
 
 .resaBox {
+    position: relative;
     width: 400px;
     border: 1px solid black;
     border-radius: 6px;
     padding: 10px;
-    background: green;
+    margin: 20px;
+    background: #61a5c2;
 }
 
 .resaBox p {
