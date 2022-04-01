@@ -39,8 +39,8 @@ include_once 'gestion.base.inc.php';
                 <p>Date Du Début De La Réservation : <?php echo date('d/m/Y', $reservation["dateDebutReservation"]) ?></p>
                 <p> Date De Fin De La Reservation : <?php echo date('d/m/Y', $reservation["datefinReservation"]) ?> </p>
                 <p> Volume Estime : <?php echo $reservation["volumeEstime"] ?> </p>
-                <p> Ville De Départ : <?php echo $reservation["codeVilleMiseDisposition"] ?> </p>
-                <p> Ville D'Arriver : <?php echo $reservation["codeVilleRendre"] ?> </p>
+                <p> Ville De Départ : <?php echo obtenirNomVille($reservation["codeVilleMiseDisposition"]) ?> </p>
+                <p> Ville D'Arriver : <?php echo obtenirNomVille($reservation["codeVilleRendre"]) ?> </p>
                 <p> Code De La Reservation : <?php echo $reservation["codeReservation"] ?> </p>
 
                 <div class="buttonAction">
@@ -52,6 +52,14 @@ include_once 'gestion.base.inc.php';
                     </form>
                 </div>
 
+                <?php
+                $collectionContainerReserves = afficherContainerReserver($reservation['codeReservation']);
+                foreach ($collectionContainerReserves as $container) :
+                var_dump($container);
+                ?>
+                 <p>Type Du Container Reservé : <?php echo $container["numTypeContainer"] ?></p>
+                 <p>Nombre De Container Reservé : <?php echo $container["qteReserver"] ?></p>
+                <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
     </div>

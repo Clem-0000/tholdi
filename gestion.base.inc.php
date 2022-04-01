@@ -53,11 +53,27 @@ function obtenirVille()
     return $lesVilles;
 }
 
+/**
+ * permet d'obtenir le nom de la ville sélectionnée par le code de la ville
+ */
+function obtenirNomVille($codeVilleSelectionee)
+{
+    $pdo = gestionnaireDeConnexion();
+    if ($pdo != NULL) {
+        $req = "select nomVille from VILLE where codeVille = $codeVilleSelectionee";
+        $pdoStatement = $pdo->query($req);
+        $laVilleSelectionee = $pdoStatement->fetch();
+        $laVilleSelectionee = $laVilleSelectionee[0];
+    }
+
+    return $laVilleSelectionee;
+}
+
 
 function obtenirTypeContainer()
 {
     $pdo = gestionnaireDeConnexion();
-    $req = "select * from TYPECONTAINER ";
+    $req = "select * from TYPECONTAINER";
     $pdoStatement = $pdo->query($req);
     $lesContainers = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
     return $lesContainers;
@@ -103,6 +119,20 @@ function afficherReservation($code)
         $lesReservations = $prep->fetchAll(PDO::FETCH_ASSOC);
     }
     return $lesReservations;
+}
+
+function afficherContainerReserver($codeReservation)
+{
+    $lesContainersReserves = array();
+    $pdo = gestionnaireDeConnexion();
+    if ($pdo != NULL) {
+
+        $sql = "SELECT * from RESERVER  where codeUtilisateur= $codeReservation order by codeReservation";
+        $prep = $pdo->prepare($sql);  //La méthode « prépare » transmet la requête au SGBR pour quelle soit analysée
+        $prep->execute();  //La méthode « execute » exécute la requête préparée à partir des données associées aux paramètres nomm
+        $lesContainersReserves = $prep->fetchAll(PDO::FETCH_ASSOC);
+    }
+    return $lesContainersReserves;
 }
 
 /**
@@ -208,3 +238,4 @@ function supprimerReservation($codeReservation)
         $prep->execute();
     }
 }
+
