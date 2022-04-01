@@ -55,8 +55,9 @@ include_once 'gestion.base.inc.php';
                 <?php
                 $collectionContainerReserves = afficherContainerReserver($reservation['codeReservation']);
                 foreach ($collectionContainerReserves as $container) :
-                var_dump($container);
                 ?>
+                <hr class="firstHR">
+
                  <p>Type Du Container Reservé : <?php echo $container["numTypeContainer"] ?></p>
                  <p>Nombre De Container Reservé : <?php echo $container["qteReserver"] ?></p>
                 <?php endforeach; ?>

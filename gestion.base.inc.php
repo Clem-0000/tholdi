@@ -126,8 +126,7 @@ function afficherContainerReserver($codeReservation)
     $lesContainersReserves = array();
     $pdo = gestionnaireDeConnexion();
     if ($pdo != NULL) {
-
-        $sql = "SELECT * from RESERVER  where codeUtilisateur= $codeReservation order by codeReservation";
+        $sql = "SELECT * from RESERVER  where codeReservation= $codeReservation order by codeReservation";
         $prep = $pdo->prepare($sql);  //La méthode « prépare » transmet la requête au SGBR pour quelle soit analysée
         $prep->execute();  //La méthode « execute » exécute la requête préparée à partir des données associées aux paramètres nomm
         $lesContainersReserves = $prep->fetchAll(PDO::FETCH_ASSOC);
