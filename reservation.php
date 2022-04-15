@@ -36,6 +36,9 @@ include_once 'gestion.base.inc.php';
         foreach ($collectionReservations as $reservation) :
         ?>
             <div class="resaBox">
+                <h4 class="titleContainerReserve">Information Sur La Réservation</h4>
+                <hr class="firstHR">
+
                 <p>Date Du Début De La Réservation : <?php echo date('d/m/Y', $reservation["dateDebutReservation"]) ?></p>
                 <p> Date De Fin De La Reservation : <?php echo date('d/m/Y', $reservation["datefinReservation"]) ?> </p>
                 <p> Volume Estime : <?php echo $reservation["volumeEstime"] ?> </p>
@@ -70,15 +73,15 @@ include_once 'gestion.base.inc.php';
                         <button type="submit" name="codeReservation" value="<?php echo $reservation['codeReservation'] ?>"> Question</button>
                     </form>
                 </div>
-
+                <h4 class="titleContainerReserve">container Réservés</h4>
                 <?php
                 $collectionContainerReserves = afficherContainerReserver($reservation['codeReservation']);
                 foreach ($collectionContainerReserves as $container) :
                 ?>
-                <hr class="firstHR">
+                    <hr class="firstHR">
 
-                 <p>Type Du Container Reservé : <?php echo $container["numTypeContainer"] ?></p>
-                 <p>Nombre De Container Reservé : <?php echo $container["qteReserver"] ?></p>
+                    <p>Type De Container Reservé : <?php echo obtenirNomContainer($container["numTypeContainer"]) ?></p>
+                    <p>Nombre De Container Reservé : <?php echo $container["qteReserver"] ?></p>
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>

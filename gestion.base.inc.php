@@ -79,6 +79,16 @@ function obtenirTypeContainer()
     return $lesContainers;
 }
 
+function obtenirNomContainer($numTypeContainer)
+{
+    $pdo = gestionnaireDeConnexion();
+    $req = "SELECT libelleTypeContainer from TYPECONTAINER where numTypeContainer = $numTypeContainer";
+    $pdoStatement = $pdo->query($req);
+    $leNomContainer = $pdoStatement->fetch();
+    $leNomContainer = $leNomContainer[0];
+    return $leNomContainer;
+}
+
 function ajouterUneReservation($dateDebutReservation, $datefinReservation, $volumeEstime, $codeVilleMiseDisposition, $codeVilleRendre, $codeUtilisateur)
 {
     $pdo = gestionnaireDeConnexion();
