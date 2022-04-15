@@ -23,7 +23,7 @@ include_once 'gestion.base.inc.php';
 
                             <div class="inputForm">
                                 <span class="details">Date du Début de Réservation</span>
-                                <input type="date" name="dateDebutReservation" id="dateDebutReservation">
+                                <input type="date" min="<?php date("d-m-Y", time())?>" name="dateDebutReservation" id="dateDebutReservation">
                             </div>
                             <div class="inputForm">
                                 <span class="details">Date de Fin de Réservation</span>

@@ -9,7 +9,7 @@
   <body>
     <nav>
       <div class="logo">
-        <a href="index.html"><h4>THOLDI</h4></a>
+        <a href="index.php"><h4>THOLDI</h4></a>
       </div>
       <ul class="nav-Links">
         <a href="connexion.php" class="button">Se connecter</a>

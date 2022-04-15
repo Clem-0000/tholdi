@@ -3,7 +3,7 @@ include_once 'gestion.base.inc.php';
 
 $reservationAModifier = $_POST['reservationAModifier'];
 $collectionValeur = afficherValeurAModifier($reservationAModifier);
-//$_SESSION['codeReservationPourModification'] = $reservationAModifier;
+$_SESSION['codeReservationPourModification'] = $reservationAModifier;
 var_dump($reservationAModifier);
 
 ?>

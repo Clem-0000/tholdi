@@ -7,7 +7,7 @@ include_once 'gestion.base.inc.php';
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="reservation.css" />
+    <link rel="stylesheet" href="reservation.css"/>
     <title>Reservation</title>
 </head>
 
@@ -40,8 +40,24 @@ include_once 'gestion.base.inc.php';
                 <p> Date De Fin De La Reservation : <?php echo date('d/m/Y', $reservation["datefinReservation"]) ?> </p>
                 <p> Volume Estime : <?php echo $reservation["volumeEstime"] ?> </p>
                 <p> Ville De Départ : <?php echo obtenirNomVille($reservation["codeVilleMiseDisposition"]) ?> </p>
-                <p> Ville D'Arriver : <?php echo obtenirNomVille($reservation["codeVilleRendre"]) ?> </p>
+                <p> Ville D'Arrivée : <?php echo obtenirNomVille($reservation["codeVilleRendre"]) ?> </p>
                 <p> Code De La Reservation : <?php echo $reservation["codeReservation"] ?> </p>
+                <?php 
+                if($reservation["etatMsg"] != null && $reservation["etatMsg"] == 0){
+                ?>
+                    <p> état de la question : en cours </p>
+                    <p> Date de la question : <?php echo date('d/m/Y', $reservation["dateMessage"]) ?> </p>
+
+                    <?php
+                }
+                if ($reservation["etatMsg"] != null && $reservation["etatMsg"] == 1){
+                    ?>
+                    <p> état de la question : répondu </p>
+                    <p> Date de la question : <?php echo date('d/m/Y', $reservation["dateMessage"]) ?> </p>
+                    <?php
+                }
+                
+                ?>
 
                 <div class="buttonAction">
                     <form action="modifierReservation.php" method="POST">
@@ -49,6 +65,9 @@ include_once 'gestion.base.inc.php';
                     </form>
                     <form action="supressionReservation.php" method="POST">
                         <button type="submit" name="codeReservation" value="<?php echo $reservation['codeReservation'] ?>"> Supprimer</button>
+                    </form>
+                    <form action="question.php" method="POST">
+                        <button type="submit" name="codeReservation" value="<?php echo $reservation['codeReservation'] ?>"> Question</button>
                     </form>
                 </div>
 

@@ -310,6 +310,10 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `codeUtilisateur` smallint(6) NOT NULL,
   `numeroDeReservation` int(11) DEFAULT NULL,
   `etat` char(10) DEFAULT NULL,
+  `libelleMessage` varchar(200) DEFAULT NULL,
+  `etatMsg` boolean DEFAULT NULL,
+  `dateMessage` bigint(20) DEFAULT NULL,
+
   PRIMARY KEY (`codeReservation`),
   KEY `fk_Dev` (`codeDevis`),
   KEY `fk_V` (`codeVilleMiseDisposition`),

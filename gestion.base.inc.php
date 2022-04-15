@@ -17,7 +17,7 @@ function gestionnaireDeConnexion()
 function afficherPays()
 {
     $pdo = gestionnaireDeConnexion();
-    $req = "select * from PAYS ";
+    $req = "select * from pays ";
     $pdoStatement = $pdo->query($req);
     $lesPays = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
     return $lesPays;
@@ -119,6 +119,16 @@ function afficherReservation($code)
         $lesReservations = $prep->fetchAll(PDO::FETCH_ASSOC);
     }
     return $lesReservations;
+}
+
+function ajouterMessage($codeReservation, $libelleMessage,$dateMessage,$etatMsg){
+    $pdo = gestionnaireDeConnexion();
+    $req = "UPDATE RESERVATION
+    SET libelleMessage = \"$libelleMessage\",
+    dateMessage = $dateMessage,
+    etatMsg = $etatMsg
+    WHERE codeReservation = $codeReservation";
+    $pdo->exec($req);
 }
 
 function afficherContainerReserver($codeReservation)
